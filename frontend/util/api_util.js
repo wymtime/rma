@@ -6,7 +6,7 @@ const responseString = `{
 
 export const fakeFetchData = () => new Promise((resolve) => {
     setTimeout(() => {
-        const response = JSON.parse(responseString);
-        resolve(response);
-    }, 100);
-});
+        const response = JSON.parse(responseString)
+        resolve(response)
+    }, 100)
+})

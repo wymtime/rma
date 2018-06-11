@@ -1,30 +1,20 @@
-import React from 'react';
+import React from 'react'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import HeaderContainer from './header/header_container';
+import HeaderContainer from './header/header_container'
 
-import ContentContainer from './content/content_container';
-
-import { requestInitialData } from '../actions/actions';
+import ContentContainer from './content/content_container'
 
 const AppWrapper = styled.div`
     height: 100%;
-`;
+`
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const App = () => (
+    <AppWrapper>
+        <HeaderContainer />
+        <ContentContainer />
+    </AppWrapper>
+)
 
-    render () {
-        return (
-            <AppWrapper>
-                <HeaderContainer />
-                <ContentContainer />
-            </AppWrapper>
-        );
-    }
-}
-
-export default App;
+export default App

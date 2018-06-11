@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import Root from './root';
+import Root from './root'
 
-import configureStore from './store/store';
+import configureStore from './store/store'
 
-import { requestInitialData } from './actions/actions';
+import { requestInitialData } from './actions/actions'
 
 document.addEventListener('DOMContentLoaded', () => {
-    const store = configureStore();
+    const store = configureStore()
 
-    store.dispatch(requestInitialData());
+    store.dispatch(requestInitialData())
 
-    const rootEL = document.getElementById('root');
-    ReactDOM.render(<Root store={store} />, rootEL);
-});
+    const rootEL = document.getElementById('root')
+    ReactDOM.render(<Root store={store} />, rootEL)
+})

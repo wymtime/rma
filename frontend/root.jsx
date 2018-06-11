@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
 
-import App from './components/app';
+import App from './components/app'
 
 const Root = ({store}) => (
     <Provider store={store}>
@@ -10,4 +10,4 @@ const Root = ({store}) => (
     </Provider>
 );
 
-export default Root;
+export default Root

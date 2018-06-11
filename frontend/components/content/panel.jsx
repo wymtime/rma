@@ -1,25 +1,22 @@
-import React from 'react';
+import React from 'react'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const PanelWrapper = styled.div`
     background: ${props => props.visible ? '#FFFFFF' : '#EEEEEE'};
     border-style: dotted;
-    width: 44%;
-    height: 85%;
-    float: left;
-    margin: 2.5%;
+    height: 100%;
 `;
 
 const PanelParagraph = styled.p`
-    visibility: ${props => props.visible ? 'visible' : 'hidden'};
+    display: ${props => props.visible ? 'inline' : 'none'};
 `
 
-export const Panel = ({content}) => {
-    const { text, visible } = content;
+export const Panel = ({content, visible}) => {
+    const { text } = content;
     return (
         <PanelWrapper visible={visible}>
             <PanelParagraph visible={visible}>{ text }</PanelParagraph>
         </PanelWrapper>
-    );
-};
+    )
+}

@@ -1,18 +1,18 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import Header from './header';
+import Header from './header'
 
-import { togglePanels } from '../../actions/actions';
+import { toggleContent } from '../../actions/actions'
 
 const mapStateToProps = (state) => ({
     header: state.header
-});
+})
 
 const mapDispatchToProps = (dispatch) => ({
-    togglePanels: () => dispatch(togglePanels())
-});
+    toggleContent: () => dispatch(toggleContent())
+})
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Header);
+)(Header)
