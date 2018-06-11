@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 
 import App from './components/app';
 
-
-const Root = ({}) => (
-    <Provider>
+const Root = ({store}) => (
+    <Provider store={store}>
         <App />
     </Provider>
 );
+
+export default Root;

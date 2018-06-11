@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 
 import Header from './header';
 
-import { toggle } from '../../actions/toggle_actions';
+import { togglePanels } from '../../actions/actions';
 
 const mapStateToProps = (state) => ({
-    data
+    header: state.header
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    togglePanel: () => dispatch(toggle())
+    togglePanels: () => dispatch(togglePanels())
 });
 
 export default connect(

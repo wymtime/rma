@@ -1,25 +1,49 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+const HeaderItems = styled.div`
+    padding-top: 4%;
+`;
+
+const HeaderItemWrapper = styled.div`
+    width: 25%;
+    text-align: center;
+    float: left;
+`;
+
 import { HeaderItem } from './header_item';
 
-class Header extends React.Componenet {
+class Header extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
+        this.state = {
+            toggled: false
+        };
+
         this.togglePanels = this.togglePanels.bind(this);
     }
 
-    togglePanels(e) {
-        e.preventDefault();
+    togglePanels() {
+        this.setState({toggled: !this.state.toggled});
         this.props.togglePanels();
     }
 
     render() {
-        const { data } = this.props;
+        const { data } = this.props.header;
+
         return (
-            <div id='header-items'>
-                { data.map((datum, idx) => <HeaderItem key={ idx } datum={ datum } />) }
-                <HeaderItem onClick={ this.togglePanels } datum={ "-" }/>
-            </div>
+            <HeaderItems>
+                { data.map((datum, idx) => 
+                    <HeaderItemWrapper key={ idx }>
+                        <HeaderItem datum={ datum } />
+                    </HeaderItemWrapper>) 
+                }
+                <HeaderItemWrapper>
+                    <div onClick={ this.togglePanels }>{ this.state.toggled ? '+': '-' }</div>
+                </HeaderItemWrapper>
+            </HeaderItems>
         );
     }
 
