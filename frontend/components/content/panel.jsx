@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const PanelInner = styled.div`
+const PanelWrapper = styled.div`
     background: ${props => props.visible ? '#FFFFFF' : '#EEEEEE'};
     border-style: dotted;
     width: 44%;
@@ -12,14 +12,14 @@ const PanelInner = styled.div`
 `;
 
 const PanelParagraph = styled.p`
-    visibility:${props => props.visible ? 'visible' : 'hidden'};
+    visibility: ${props => props.visible ? 'visible' : 'hidden'};
 `
 
 export const Panel = ({content}) => {
     const { text, visible } = content;
     return (
-        <PanelInner visible={visible}>
+        <PanelWrapper visible={visible}>
             <PanelParagraph visible={visible}>{ text }</PanelParagraph>
-        </PanelInner>
+        </PanelWrapper>
     );
 };

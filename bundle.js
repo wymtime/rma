@@ -150,15 +150,6 @@ const AppWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div
     height: 100%;
 `;
 
-const Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].header`
-    height: 20%;
-    border-bottom: 3px solid #000000;
-`;
-
-const Section = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section`
-    height: 80%;
-`;
-
 class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     constructor(props) {
         super(props);
@@ -168,16 +159,8 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
             AppWrapper,
             null,
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                Header,
-                null,
-                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                Section,
-                null,
-                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-            )
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_2__["default"], null),
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)
         );
     }
 }
@@ -205,8 +188,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const ContentInner = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
-    height: 100%;
+const Section = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section`
+    height: 80%;
 `;
 
 class Content extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
@@ -217,7 +200,7 @@ class Content extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     render() {
         const { contentA, contentB } = this.props.content;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            ContentInner,
+            Section,
             null,
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_panel__WEBPACK_IMPORTED_MODULE_2__["Panel"], { content: contentA }),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_panel__WEBPACK_IMPORTED_MODULE_2__["Panel"], { content: contentB })
@@ -269,7 +252,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const PanelInner = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
+const PanelWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
     background: ${props => props.visible ? '#FFFFFF' : '#EEEEEE'};
     border-style: dotted;
     width: 44%;
@@ -279,13 +262,13 @@ const PanelInner = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div
 `;
 
 const PanelParagraph = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p`
-    visibility:${props => props.visible ? 'visible' : 'hidden'};
+    visibility: ${props => props.visible ? 'visible' : 'hidden'};
 `;
 
 const Panel = ({ content }) => {
     const { text, visible } = content;
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        PanelInner,
+        PanelWrapper,
         { visible: visible },
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
             PanelParagraph,
@@ -314,12 +297,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const HeaderItems = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
-    padding-top: 4%;
+const HeaderWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].header`
+    height: 20%;
+    border-bottom: 3px solid #000000;
 `;
 
 const HeaderItemWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
     width: 25%;
+    padding-top: 4%;
     text-align: center;
     float: left;
 `;
@@ -346,7 +331,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         const { data } = this.props.header;
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            HeaderItems,
+            HeaderWrapper,
             null,
             data.map((datum, idx) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
                 HeaderItemWrapper,

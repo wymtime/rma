@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { Panel } from './panel';
 
-const ContentInner = styled.div`
-    height: 100%;
+const Section = styled.section`
+    height: 80%;
 `;
 
 class Content extends React.Component {
@@ -16,10 +16,10 @@ class Content extends React.Component {
     render() {
         const { contentA, contentB } = this.props.content;
         return (
-            <ContentInner>
+            <Section>
                 <Panel content={ contentA }/>
                 <Panel content={ contentB }/>
-            </ContentInner>
+            </Section>
         );
     }
 }

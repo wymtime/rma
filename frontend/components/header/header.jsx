@@ -2,12 +2,14 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const HeaderItems = styled.div`
-    padding-top: 4%;
+const HeaderWrapper = styled.header`
+    height: 20%;
+    border-bottom: 3px solid #000000;
 `;
 
 const HeaderItemWrapper = styled.div`
     width: 25%;
+    padding-top: 4%;
     text-align: center;
     float: left;
 `;
@@ -34,7 +36,7 @@ class Header extends React.Component {
         const { data } = this.props.header;
 
         return (
-            <HeaderItems>
+            <HeaderWrapper>
                 { data.map((datum, idx) => 
                     <HeaderItemWrapper key={ idx }>
                         <HeaderItem datum={ datum } />
@@ -43,7 +45,7 @@ class Header extends React.Component {
                 <HeaderItemWrapper>
                     <div onClick={ this.togglePanels }>{ this.state.toggled ? '+': '-' }</div>
                 </HeaderItemWrapper>
-            </HeaderItems>
+            </HeaderWrapper>
         );
     }
 

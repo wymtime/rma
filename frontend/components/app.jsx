@@ -12,15 +12,6 @@ const AppWrapper = styled.div`
     height: 100%;
 `;
 
-const Header = styled.header`
-    height: 20%;
-    border-bottom: 3px solid #000000;
-`;
-
-const Section = styled.section`
-    height: 80%;
-`;
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -29,12 +20,8 @@ class App extends React.Component {
     render () {
         return (
             <AppWrapper>
-                <Header>
-                    <HeaderContainer />
-                </Header>
-                <Section>
-                    <ContentContainer />
-                </Section>
+                <HeaderContainer />
+                <ContentContainer />
             </AppWrapper>
         );
     }
